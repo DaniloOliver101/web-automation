@@ -1,0 +1,97 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-24T18:08:42.668Z",
+        "line": 7,
+        "name": "Venda do PET Rufus para MAria",
+        "description": "",
+        "id": "cadastrar-novo-user-e-vender-um-pet;venda-do-pet-rufus-para-maria",
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3039530000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "o user",
+            "match": {
+              "location": "br.com.petz.steps.APISteps.oUser(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "\"mariass\"",
+                  "\"Maria\"",
+                  "\"Assunção\"",
+                  "\"mass@gmail.com\"",
+                  "\"1234",
+                  "\"1198765-4321\""
+                ]
+              }
+            ],
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 1430272900,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Com o Pet",
+            "match": {
+              "location": "br.com.petz.steps.APISteps.comOPet(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "\"Rufus\"",
+                  "\"Dog\""
+                ]
+              }
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 5002900,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "uma nova ordem de venda sera criada",
+            "match": {
+              "location": "br.com.petz.steps.APISteps.umaNovaOrdemDeVendaSeraCriada()"
+            },
+            "keyword": "Entao "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "o status da venda deve ser alterado para \"COMPLETED\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"COMPLETED\"",
+                  "offset": 41
+                }
+              ],
+              "location": "br.com.petz.steps.APISteps.oStatusDaVendaDeveSerAlteradoPara(java.lang.String)"
+            },
+            "keyword": "E "
+          }
+        ]
+      }
+    ],
+    "name": "Cadastrar novo user e vender um pet",
+    "description": "  Eu como administrador do sistema\n  devo ser capaz de cadastrar users e pets\n  Para que eu possa vender os pets para os users",
+    "id": "cadastrar-novo-user-e-vender-um-pet",
+    "keyword": "Funcionalidade",
+    "uri": "file:src/main/resources/features/API_PETZ.feature",
+    "tags": []
+  }
+]
