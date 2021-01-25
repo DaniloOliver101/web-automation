@@ -40,6 +40,26 @@ public class APISteps {
     }
 
     @E("o status da venda deve ser alterado para {string}")
-    public void oStatusDaVendaDeveSerAlteradoPara(String arg0) {
+    public void oStatusDaVendaDeveSerAlteradoPara(String status) {
+        apiTest.testUpdateOrder(status);
     }
+
+    @E("O status da order sera alterado para <{string}>")
+    public void oStatusDaOrderSeraAlteradoPara(String status) {
+        apiTest.testUpdateOrder(status);
+    }
+
+    @Dado("o user com os dados {int} <{string}> <{string}> <{string}> <{string}> <{string}> <{string}> {int}")
+    public void oUserComOsDados(int id, String username, String firstName, String lastName, String email, String password, String phone, int status) {
+
+        User user = new User(id,username,firstName,lastName,email,password,phone,  status);
+        System.out.println(api.generateJson(user));
+
+    }
+
+    @Dado("o user com os dados <id> <ussername> <firstname> <lastname> <email> <{string}> <phone> {int}")
+    public void oUserComOsDadosIdUssernameFirstnameLastnameEmailPhone(String arg0, int arg1) {
+    }
+
+
 }

@@ -4,6 +4,7 @@ import br.com.petz.apis.Api;
 import br.com.petz.model.Order;
 import br.com.petz.model.User;
 import io.cucumber.datatable.DataTable;
+import io.restassured.path.json.JsonPath;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,20 +19,28 @@ public class ApiTest {
     private final Api api = new Api();
     private String[] userData;
     private String[] petData;
-    public void setUserTable(DataTable userTable){
+    private Order order;
+
+    public void setUserTable(DataTable userTable) {
         this.userTable = userTable;
     }
-    public DataTable getUserTable(){
+
+    public DataTable getUserTable() {
         return userTable;
     }
-    public void setPetTable(DataTable petTable){
+
+    public void setPetTable(DataTable petTable) {
         this.petTable = petTable;
     }
-    public DataTable getPetTable(){
+
+    public DataTable getPetTable() {
         return petTable;
     }
 
-    public void testAddNewUser(){
+    public void testAddnewUser(User user){
+
+    }
+    public void testAddNewUser() {
         var data = getUserTable().asList();
         this.userData = new String[data.size()];
         this.userData = data.toArray(userData);
@@ -66,8 +75,25 @@ public class ApiTest {
     }
 
     public void testAddNewOrder() {
-        var order = helper.order(123,20,1,"placed",true);
+        order = helper.order(123, 20, 1, "placed", true);
+        var res = api.addNewOrder(order);
+        JsonPath jsonPath = res.jsonPath();
+        var orderPath = jsonPath.getObject("$", Order.class);
+        Assert.assertEquals(orderPath.getId(), order.getId());
+        Assert.assertEquals(orderPath.getPetId(), order.getPetId());
+        Assert.assertEquals(orderPath.getQuantity(), orderPath.getQuantity());
+        Assert.assertEquals(res.statusCode(), 200);
+    }
 
+    public void testUpdateOrder(String status) {
+        order.setStatus(status);
+        var res = api.updateOrder(order);
+        JsonPath jsonPath = res.jsonPath();
+        var orderPath = jsonPath.getObject("$", Order.class);
+        Assert.assertEquals(orderPath.getId(), order.getId());
+        Assert.assertEquals(orderPath.getPetId(), order.getPetId());
+        Assert.assertEquals(orderPath.getQuantity(), orderPath.getQuantity());
+        Assert.assertEquals(res.statusCode(), 200);
 
     }
 }

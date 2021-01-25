@@ -38,6 +38,10 @@ public class Order {
         return quantity;
     }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public String getShipDate() {
         return shipDate;
     }

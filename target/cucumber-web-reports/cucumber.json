@@ -1,0 +1,128 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-25T03:08:02.321Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3870381600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "br.com.submarino.steps.WebSteps.setUp()"
+            }
+          }
+        ],
+        "line": 5,
+        "name": "Adicionar um produto ao carrinho com sucesso",
+        "description": "",
+        "id": "checkout-submarino;adicionar-um-produto-ao-carrinho-com-sucesso",
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2012023700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "que eu acesso a pagina \"https://www.submarino.com.br\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://www.submarino.com.br\"",
+                  "offset": 23
+                }
+              ],
+              "location": "br.com.submarino.steps.WebSteps.queEuAcessoAPagina(java.lang.String)"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 1437244500,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "que realizo uma pesquisa por \"Refrigerador Electrolux\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Refrigerador Electrolux\"",
+                  "offset": 29
+                }
+              ],
+              "location": "br.com.submarino.steps.WebSteps.queRealizoUmaPesquisaPor(java.lang.String)"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1001900,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "na lista eu procuro pelo \"\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"\"",
+                  "offset": 25
+                }
+              ],
+              "location": "br.com.submarino.steps.WebSteps.naListaEuProcuroPelo(java.lang.String)"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "selecionar e validar",
+            "match": {
+              "location": "br.com.submarino.steps.WebSteps.selecionarEValidar()"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "ao incluir o item no carrinho",
+            "match": {
+              "location": "br.com.submarino.steps.WebSteps.aoIncluirOItemNoCarrinho()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1000600,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "devo poder validar os dados do produto",
+            "match": {
+              "location": "br.com.submarino.steps.WebSteps.devoPoderValidarOsDadosDoProduto()"
+            },
+            "keyword": "Entao "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@WEB"
+          }
+        ]
+      }
+    ],
+    "name": "Checkout Submarino",
+    "description": "",
+    "id": "checkout-submarino",
+    "keyword": "Funcionalidade",
+    "uri": "classpath:features/WEB_Checkout_Submarino.feature",
+    "tags": []
+  }
+]

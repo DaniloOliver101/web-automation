@@ -44,6 +44,18 @@ public class User {
     public User(){
 
     }
+
+    public User(int id, String username, String firstName, String lastName, String email, String password, String phone, int userStatus) {
+        this.id = id;
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.userStatus = userStatus;
+    }
+
     public User(String... data) {
         this.id = 1;
         this.username = data[0];

@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "json:target/cucumber-reports/cucumber.json"},
         glue = {"classpath:br.com.petz.steps"},
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        stepNotifications = true, tags = {""})
+        stepNotifications = true, tags = {"@API"})
 public class ApiRunner {
 
 }
